@@ -14,7 +14,7 @@ export const useCategory = () => {
     const result = await ImageColors.getColors(cat.strCategoryThumb)
     const color = result.platform === 'android' ?
       result.dominant :
-      (result as IOSImageColors).primary;
+      (result as IOSImageColors).secondary;
     cat.color = color;
   });
 
