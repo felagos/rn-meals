@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import {
-  Pressable,
   Text,
   View,
   StyleSheet,
   Platform
 } from "react-native";
+import { Pressable } from "./Pressable";
 
 interface Props {
   title: string;
@@ -23,10 +23,7 @@ export const CategoryGridTile = ({ title, color, onPress }: Props) => {
 
   return (
     <View style={[styles.container, { backgroundColor: color }]}>
-      <Pressable
-        onPress={onPress}
-        android_ripple={{ color: '#ccc' }}
-        style={({ pressed }) => [styles.button, pressed ? styles.butomPressed : null]}>
+      <Pressable onPress={onPress}>
         <View style={styles.innerContainer}>
           <Text style={[styles.title, { color: colorText }]} ellipsizeMode='clip' >{title}</Text>
         </View>
@@ -40,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 16,
     height: 150,
+    backgroundColor: "red",
     borderRadius: 8,
     shadowColor: "#000",
     shadowOffset: {

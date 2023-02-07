@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
 import { FlatList, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { CategoryGridTile } from "../components";
 import { ScreensEnum } from "../enums";
 import { useCategory } from "../hooks"
@@ -23,14 +22,12 @@ export const CategoriesScreen = () => {
   const keyExtractor = (item: Category) => item.idCategory;
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
+    <FlatList
         data={query.data}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         numColumns={2}
       />
-    </SafeAreaView>
   );
 
 }
