@@ -10,9 +10,10 @@ import {
 interface Props {
   title: string;
   color?: string;
+  onPress: () => void;
 }
 
-export const CategoryGridTile = ({ title, color }: Props) => {
+export const CategoryGridTile = ({ title, color, onPress }: Props) => {
   const colorText = useMemo(() => {
     if (!color) return '#ffffff';
 
@@ -23,6 +24,7 @@ export const CategoryGridTile = ({ title, color }: Props) => {
   return (
     <View style={[styles.container, { backgroundColor: color }]}>
       <Pressable
+        onPress={onPress}
         android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => [styles.button, pressed ? styles.butomPressed : null]}>
         <View style={styles.innerContainer}>
