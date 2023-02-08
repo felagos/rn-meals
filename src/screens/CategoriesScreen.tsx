@@ -9,6 +9,7 @@ import { CategoryScreenProps } from "../types";
 export const CategoriesScreen = () => {
   const navigation = useNavigation<CategoryScreenProps>();
   const query = useCategory();
+  query.data;
 
   const onPress = (category: string) => navigation.navigate(ScreensEnum.MEALS, { category });
 
