@@ -16,7 +16,7 @@ export const useCategory = () => {
 
   useEffect(() => {
     const assignColor = async () => {
-      if (!query.data) return Promise.resolve([]);
+      if (!query.data) return [];
 
       const assignedColor = query.data.map(async cat => {
         const result = await ImageColors.getColors(cat.strCategoryThumb)
