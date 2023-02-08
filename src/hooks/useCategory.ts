@@ -13,8 +13,8 @@ export const useCategory = () => {
   query.data?.forEach(async cat => {
     const result = await ImageColors.getColors(cat.strCategoryThumb)
     const color = result.platform === 'android' ?
-      result.dominant :
-      (result as IOSImageColors).secondary;
+      result.average :
+      (result as IOSImageColors).platform;
     cat.color = color;
   });
 
