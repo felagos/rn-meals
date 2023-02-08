@@ -4,9 +4,17 @@ import { ScreensEnum } from "../enums";
 
 export type StackParamList = {
   CategoriesScreen: undefined;
-  MealsScreen: { category: string };
+  MealsScreen: {
+    category: string;
+  };
+  MealDetailScreen: {
+    mealId: string;
+    name: string;
+  };
 }
 
 export type CategoryScreenProps = NativeStackNavigationProp<StackParamList, ScreensEnum.CATEGORIES>;
+export type MealDetailScreenProps = NativeStackNavigationProp<StackParamList, ScreensEnum.MEAL_DETAIL>;
 
 export type MealsRouteProps = RouteProp<StackParamList, ScreensEnum.MEALS>;
+export type MealDetailRouteProps = RouteProp<StackParamList, ScreensEnum.MEAL_DETAIL>;

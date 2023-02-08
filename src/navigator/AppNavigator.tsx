@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScreensEnum } from "../enums";
-import { CategoriesScreen, MealsScreen } from "../screens";
+import { CategoriesScreen, MealDetailScreen, MealsScreen } from "../screens";
 import { StackParamList } from "../types";
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -14,6 +14,7 @@ export const AppNavigator = () => (
       <Stack.Navigator>
         <Stack.Screen name={ScreensEnum.CATEGORIES} component={CategoriesScreen} options={{ headerShown: false }} />
         <Stack.Screen name={ScreensEnum.MEALS} component={MealsScreen} />
+        <Stack.Screen name={ScreensEnum.MEAL_DETAIL} component={MealDetailScreen} />
       </Stack.Navigator>
     </SafeAreaView>
   </NavigationContainer>

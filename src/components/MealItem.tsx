@@ -4,11 +4,12 @@ import { Pressable } from "./Pressable";
 
 interface Props {
   meal: Meal;
+  onPress: () => void;
 }
 
-export const MealItem = ({ meal }: Props) => (
+export const MealItem = ({ meal, onPress }: Props) => (
   <View style={styles.container}>
-    <Pressable onPress={() => {}}>
+    <Pressable onPress={onPress}>
       <Image style={styles.image} source={{ uri: meal.strMealThumb }} />
       <View style={styles.description}>
         <Text style={styles.title}>{meal.strMeal}</Text>
