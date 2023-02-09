@@ -51,5 +51,6 @@ export interface MealDetail {
   strSource: string | null,
   strImageSource: string | null,
   strCreativeCommonsConfirmed: string | null,
-  dateModified: string | null
+  dateModified: string | null;
+  color: string;
 }
